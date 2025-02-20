@@ -1,0 +1,137 @@
+/* Import Aileron font from Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&family=Lilita+One&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+
+:root {
+  --background: #ffffff;
+  --foreground: #8d9ff0;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  font-family: "Space Mono", serif;
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  background-color: #8d9ff0;
+  background-size: 200% 200%;
+}
+
+h1 {
+  color: #8d9ff0;
+  font-size: 50px;
+  text-align: center;
+  padding: 2%;
+}
+.container {
+  max-width: 1000px; /* Slightly wider for better readability */
+  font-family: "Space Mono", serif;
+  color: #0a0a0a;
+  padding: 50px;
+  background: rgba(255, 255, 255, 0.8); /* Slightly transparent white */
+  border-radius: 12px; /* Rounded corners */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Soft shadow */
+}
+
+section {
+  background: white; /* Solid white for contrast */
+  padding: 15px;
+  margin: 20px 0; /* Space between sections */
+  border: 8px solid #7bde76; /* Green left border */
+  border-radius: 12px; /* Curved edges */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
+}
+
+.game-container {
+  font-family: "Space Mono", serif;
+  text-align: center;
+  color: white;
+  font-size: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* height: 100vh; */
+  /* padding: %; */
+}
+
+.game-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  padding-bottom: 2%;
+}
+
+.lesson-container {
+  max-width: 1500px;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  border: 4px solid #7bde76;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+.question-image {
+  max-width: 700px; /* Make the question image smaller */
+  height: auto;
+  margin: 20px auto;
+  display: block;
+}
+
+.options-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  width: 1800px;
+}
+
+.option-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.option-button img {
+  width: 600px; /* Smaller options */
+  height: auto;
+  transition: transform 0.3s ease;
+}
+
+.option-button img:hover {
+  transform: scale(1.1);
+}
+
+.score {
+  font-size: 5rem;
+  font-weight: bold;
+  margin-top: 20px;
+  padding: 2%; 
+
+}
+
+.example {
+  display: flex;
+  flex-direction: column;
+}
+
+.start-button {
+  font-family: "Space Mono", serif;
+  background: white; /* Solid white for contrast */
+  padding: 25px;
+  margin: 20px 0; /* Space between sections */
+  border: 8px solid #7bde76; /* Green left border */
+  border-radius: 12px; /* Curved edges */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  font-size: 30px;
+}
+
+.button-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
