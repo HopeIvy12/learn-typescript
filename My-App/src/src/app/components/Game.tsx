@@ -2,11 +2,11 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { matchingPairs } from "@/app/components/Questions";
+import Image from "next/image"; // Import Image for optimized loading
 
 export default function Game() {
   const [currentRound, setCurrentRound] = useState(0);
   const [score, setScore] = useState(0);
-  const [selected, setSelected] = useState<string | null>(null);
   const [lessonIndex, setLessonIndex] = useState(0);
 
   const lessons = [
@@ -72,7 +72,6 @@ export default function Game() {
   const router = useRouter();
 
   const handleChoice = (choice: string) => {
-    setSelected(choice);
     if (choice === currentPair.answer) {
       setScore(score + 1);
     }
@@ -81,44 +80,38 @@ export default function Game() {
       if (currentRound < matchingPairs.length - 1) {
         setCurrentRound(currentRound + 1);
         setLessonIndex((lessonIndex + 1) % lessons.length); // Cycle through lessons
-        setSelected(null);
       } else {
-        alert(
-          `Great job! Your score: ${
-            score + (choice === currentPair.answer ? 1 : 0)
-          }`
-        );
+        alert(`Great job! Your score: ${score + (choice === currentPair.answer ? 1 : 0)}`);
         router.push("/"); // Redirect to home page
       }
     }, 3000);
   };
 
   return (
-        <div className="game-container">
-          <h1 className="game-title">Matching Game</h1>
-          <div className="lesson-container">
-            <h2>{currentLesson.title}</h2>
-            <p>{currentLesson.content}</p>
-            <p><strong>{currentLesson.exampleTitle}</strong></p>
-            <p className="example">{currentLesson.example}</p>
-            <p>
-              Round {currentRound + 1} / {matchingPairs.length}
-            </p>
-          </div>
-    
-          <div className="example">
-            <img className="question-image" src={currentPair.question} alt="JavaScript Element" />
-          </div>
-    
-          <div className="options-container">
-            {currentPair.options.map((option, index) => (
-              <button key={index} className="option-button" onClick={() => handleChoice(option)}>
-                <img src={option} alt={`Option ${index + 1}`} />
-              </button>
-            ))}
-          </div>
-    
-          <p className="score">Score: {score}</p>
-        </div>
-      );
-    }
+    <div className="game-container">
+      <h1 className="game-title">Matching Game</h1>
+      <div className="lesson-container">
+        <h2>{currentLesson.title}</h2>
+        <p>{currentLesson.content}</p>
+        <p><strong>{currentLesson.exampleTitle}</strong></p>
+        <p className="example">{currentLesson.example}</p>
+        <p>
+          Round {currentRound + 1} / {matchingPairs.length}
+        </p>
+      </div>
+
+      <div className="example">
+        <Image className="question-image" src={currentPair.question} alt="JavaScript Element" width={500} height={300} />
+      </div>
+
+      <div className="options-container">
+        {currentPair.options.map((option, index) => (
+          <button key={index} className="option-button" onClick={() => handleChoice(option)}>
+            <Image src={option} alt={`Option ${index + 1}`} width={100} height={100} />
+          </button>
+        ))}
+      </div>
+      <p className="score">Score: {score}</p>
+    </div>
+  );
+}
