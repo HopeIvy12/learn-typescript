@@ -97,8 +97,8 @@ section {
 }
 
 .option-button img {
-  width: 600px; /* Smaller options */
-  height: auto;
+  /* width: 600px; Smaller options
+  height: auto; */
   transition: transform 0.3s ease;
 }
 

@@ -101,13 +101,13 @@ export default function Game() {
       </div>
 
       <div className="example">
-        <Image className="question-image" src={currentPair.question} alt="JavaScript Element" width={500} height={300} />
+        <Image className="question-image" src={currentPair.question} alt="JavaScript Element" width={650} height={350}  quality={85} />
       </div>
 
       <div className="options-container">
         {currentPair.options.map((option, index) => (
           <button key={index} className="option-button" onClick={() => handleChoice(option)}>
-            <Image src={option} alt={`Option ${index + 1}`} width={100} height={100} />
+            <Image src={option} alt={`Option ${index + 1}`} width={600} height={300} quality={85}/>
           </button>
         ))}
       </div>
