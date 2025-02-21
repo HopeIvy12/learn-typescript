@@ -32,7 +32,7 @@ export const matchingPairs: MatchingPairs[] = [
       options: [
         "/question3-correct.png",
         "/question3-incorrect1.png",
-        "/question3-incorrect3.png",
+        "/question3-incorrect2.png",
         "/question3-incorrect3.png",
       ],
     },
