@@ -1,4 +1,4 @@
-# **100 Days of Code - TypeScript Learning App**  
+# **TypeScript Learning App**  
 An interactive and fun way to learn TypeScript, designed to help both beginners and advanced learners break down TypeScript concepts with ease.
 
 ## **Description**  
